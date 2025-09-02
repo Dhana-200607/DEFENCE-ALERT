@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DEFENCE ALERT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e6ffe6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    header {
+      background: linear-gradient(to right, #355e3b, #4f7942);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    nav {
+      background-color: #87b687;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    nav button {
+      background-color: #c6f0b6;
+      border: none;
+      padding: 10px 25px;
+      font-weight: bold;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #a0e69e;
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section-button {
+      margin: 20px;
+      padding: 20px 40px;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      background-color: #90ee90;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .section-button:hover {
+      background-color: #77dd77;
+      transform: translateY(-3px);
+    }
+
+    .content {
+      padding: 30px;
+      text-align: left;
+      max-width: 850px;
+      margin: auto;
+      background-color: #f4fff4;
+      border-radius: 15px;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    }
+
+    .back-button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      background-color: #99cc99;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #88bb88;
+      transform: scale(1.05);
+    }
+
+    .login-form {
+      max-width: 350px;
+      margin: auto;
+      padding: 50px 30px;
+      background: #f0fff0;
+      border-radius: 15px;
+      margin-top: 80px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    .login-form h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #21ba43;
+      border-radius: 8px;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 12px;
+      background-color: #7aad58;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .login-form button:hover {
+      background-color: #43a047;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555555;
+    }
+
+    /* Section-specific backgrounds */
+    #armyPage header {
+      background: url('https://cdn-icons-png.flaticon.com/512/190/190411.png') no-repeat center left, #3e5f3e;
+      background-size: 40px;
+      padding-left: 60px;
+    }
+
+    #navyPage header {
+      background: url('https://cdn-icons-png.flaticon.com/512/190/190422.png') no-repeat center left, #355d7d;
+      background-size: 40px;
+      padding-left: 60px;
+    }
+
+    #airforcePage header {
+      background: url('https://cdn-icons-png.flaticon.com/512/190/190406.png') no-repeat center left, #3f6ca8;
+      background-size: 40px;
+      padding-left: 60px;
+    }
+
+    #aboutPage header {
+      background: linear-gradient(to right, #6ea965, #a0d79e);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Login Page -->
+<div id="loginPage" class="login-form">
+  <h2>Login to Defense Alert</h2>
+  <input type="text" placeholder="Username" id="username">
+  <input type="password" placeholder="Password" id="password">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- Home Page -->
+<div id="homePage" class="hidden">
+  <header>
+    <h1>Defence Alert 🚨</h1>
+  </header>
+
+  <nav>
+    <button onclick="showPage('loginPage')">Login</button>
+    <button onclick="showPage('homePage')">Home</button>
+    <button onclick="showPage('aboutPage')">About Us</button>
+    <button onclick="logout()">Logout</button>
+  </nav>
+
+  <div class="container">
+    <h2>Explore Our Forces</h2>
+    <button class="section-button" onclick="showPage('armyPage')">🪖 Army</button>
+    <button class="section-button" onclick="showPage('navyPage')">⚓ Navy</button>
+    <button class="section-button" onclick="showPage('airforcePage')">✈ Air Force</button>
+  </div>
+</div>
+
+<!-- Army Page -->
+<div id="armyPage" class="hidden">
+  <header><h1>INDIAN ARMY 🪖</h1></header>
+  <div class="content">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar with Links</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      background-color: #004080;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="https://nationaldefenceinstitute.in/downloads" target="_blank">📘 Study Materials</a></li>
+      <li><a href="https://store.tutorialsduniya.com/c/indian-army-exams/" target="_blank">📄 Previous Year Papers</a></li>
+      <li><a href="https://joinindianarmy.nic.in/writereaddata/Portal/Images/pdf/downloads/model-test-paper-4.pdf" target="_blank">📝 Mock Test</a></li>
+            <li><a href="https://youtu.be/-3uQQdVTEZo?si=t1Nb9ikqRNpbVECY" target="_blank">📺Video</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
+
+  
+
+</body>
+</html>
+
+  <img src="https://wallpapers.com/images/hd/marching-indian-army-sjs3875ri3m6tmi5.jpg"style="width:400px; hight:200px">
+    
+    <p>The Indian Army is the land-based branch of the Indian Armed Forces. It is responsible for protecting the nation’s borders and ensuring internal security. 
+    The Army is involved in humanitarian rescue operations during natural calamities and other disturbances. It has a long and proud history of bravery and service.
+    The army consists of various regiments and divisions equipped with advanced weapons and technologies. It trains soldiers in mountain, jungle, and desert warfare.
+    The Indian Army is also a part of UN peacekeeping missions and supports national development. It offers various opportunities for youth to serve and grow with pride.
+    Discipline, honor, and courage are core values of the Indian Army.          <a href="https://joinindianarmy.nic.in/Authentication.aspx">visit INDIAN ARMY</a></p>   
+
+    
+    
+    <button class="back-button" onclick="showPage('homePage')">⬅ Back to Home</button>
+       
+    
+  </div>
+</div>
+
+
+<!-- Navy Page -->
+<div id="navyPage" class="hidden">
+  <header><h1>INDIAN NAVY ⚓</h1></header>
+  <div class="content">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar with Links</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      background-color: #3872ac;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="https://testbook.com/indian-navy-ssr-aa/syllabus-exam-pattern" target="_blank">📘 Study Materials</a></li>
+      <li><a href="https://admissions.sreedharscce.com/bank-online-offline?utm_source=Adwords&utm_medium=Search&utm_campaign=online&utm_id=22340773399&gad_source=5&gad_campaignid=22340773399&gclid=EAIaIQobChMI9uiM7_aRjwMVWKVmAh0qDR_yEAAYASAAEgL0nfD_BwE" target="_blank">📄 Previous Year Papers</a></li>
+      <li><a href="https://admissions.sreedharscce.com/bank-online-offline?utm_source=Adwords&utm_medium=Search&utm_campaign=online&utm_id=22340773399&gad_source=5&gad_campaignid=22340773399&gclid=EAIaIQobChMI9uiM7_aRjwMVWKVmAh0qDR_yEAAYASAAEgL0nfD_BwE" target="_blank">📝 Mock Test</a></li>
+            <li><a href="https://youtu.be/q2IwiPT6Z0s?si=PGySSQZ7PgWOGtW_" target="_blank"> 📺video</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
+
+    <img src="https://internationaljournalofresearch.files.wordpress.com/2020/07/images-14.jpeg" style ="width:700px; height:400px;">
+
+    <p>The Indian Navy secures the maritime borders of the nation. It operates above, on, and beneath the ocean’s surface to protect India’s interests. 
+    Established in 1612, the Navy now operates modern ships, submarines, and aircrafts. It also provides disaster relief and humanitarian aid in coastal regions.
+    The Navy plays a vital role in international cooperation and peacekeeping. It has multiple commands and fleets that ensure readiness and response.
+    Training at INS Shivaji and NDA prepares officers and sailors in naval tactics, engineering, and aviation. 
+    The Navy Day is celebrated on December 4 every year.
+    It encourages young Indians to join and serve in various technical and non-technical roles. The navy stands for strength, integrity, and commitment to the nation.<a href="https://www.joinindiannavy.gov.in/">visit INDIAN NAVY</a></p>
+    <button class="back-button" onclick="showPage('homePage')">⬅ Back to Home</button>
+  </div>
+</div>
+
+
+<!-- Air Force Page -->
+<div id="airforcePage" class="hidden">
+  <header><h1>INDIAN AIR FORCE✈</h1></header>
+  <div class="content">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar with Links</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    nav {
+      background-color: #2a7636;
+      padding: 10px;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin-right: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(86, 194, 150);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="https://toppersexam.com/DEFENCE-EXAMS/INDIAN-AIR-FORCE-X-GROUP/free-test_192.html" target="_blank">📘 Study Materials</a></li>
+      <li><a href="https://prepp.in/air-force-group-x-exam/previous-year-paper" target="_blank">📄 Previous Year Papers</a></li>
+      <li><a href="https://toppersexam.com/DEFENCE-EXAMS/INDIAN-AIR-FORCE-X-GROUP/free-test_192.html" target="_blank">📝 Mock Test</a></li>
+      <li><a href="https://youtu.be/2OodlsKkY0Q?si=ml_UcTgwsKdu2_C6" target="_blank"> 📺video</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
+
+    <img src="https://images.news18.com/ibnlive/uploads/2022/06/indian-air-force-165561873416x9.jpg" style ="width:700px; height:400px;">
+    <p>The Indian Air Force (IAF) defends the Indian airspace and supports land and naval operations. 
+    It was officially established on 8 October 1932. The IAF plays a major role in wartime and peace missions.
+    Equipped with state-of-the-art aircrafts like Rafale, Sukhoi, and Tejas, the IAF conducts air strikes, rescues, and surveillance missions.
+    It also provides logistics during calamities and medical emergencies.
+    Training is given at prestigious institutions like AFA Hyderabad and NDA. 
+    Officers are trained in flying, meteorology, engineering, and more.
+    The Air Force Day is celebrated on 8 October. The IAF continues to attract the youth with great career paths and the motto “Touch the Sky with Glory”.<a href="https://indianairforce.nic.in/spanningtree?expired=true">visit INDIAN-AIR-FORCE</a></p>
+    <button class="back-button" onclick="showPage('homePage')">⬅ Back to Home</button>
+  </div>
+</div>
+
+<!-- About Page -->
+<div id="aboutPage" class="hidden">
+  <header><h1>About Defense Alert 🌐</h1></header>
+  <div class="content">
+    <p>Defense Alert is a web project designed to inform users about the three primary wings of Indian defense: Army, Navy, and Air Force.
+    This platform aims to serve as a beginner-friendly information portal and guidance platform for students, aspirants, and citizens.
+    Users can explore basic facts and insights about each defense wing and understand their significance.
+    Designed with simplicity and creativity, this project is a demonstration of web development and national pride At Defence Alert, we are committed to national security through rapid communication, real-time alerts, and reliable intelligence sharing. Our mission is to keep citizens, security personnel, and emergency services informed and prepared in times of crisis — whether from natural disasters, external threats, or internal disturbances.
+
+Founded on the principles of vigilance, accuracy, and speed, Defence Alert provides a robust platform that delivers timely warnings, situational updates, and critical instructions. We work closely with defence agencies, local authorities, and technology partners to ensure that our alert systems are efficient, secure, and accessible to all.
+
+Whether you're a civilian seeking safety or a professional on the frontlines, Defence Alert is your trusted source for real-time defence and emergency updates — because every second counts.
+    <p><strong>Contact Us:</strong><br>
+    Email: defensealert@support.in<br>
+    Phone: +91 98765 43210
+    ,95162 07269
+    ,12309 86549
+    <button class="back-button" onclick="showPage('homePage')">⬅ Back to Home</button>
+  </div>
+</div>
++
+<footer>
+  © 2025 Defense Alert Project by TEAM@27
+</footer>
+
+<script>
+  function login() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    if (username && password) {
+      showPage('homePage');
+    } else {
+      alert("Please enter username and password.");
+    }
+  }
+
+  function logout() {
+    showPage('loginPage');
+  }
+
+  function showPage(pageId) {
+    const pages = ['loginPage', 'homePage', 'armyPage', 'navyPage', 'airforcePage', 'aboutPage'];
+    pages.forEach(id => document.getElementById(id).classList.add('hidden'));
+    document.getElementById(pageId).classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
